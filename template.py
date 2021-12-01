@@ -9,10 +9,8 @@ def part2(s):
 if __name__ == '__main__':
     with open('input.txt') as f:
         s = f.read()
-        # or
-        s = f.read().split()
-        # or
-        s = [int(x) for x in f.read().split()]
 
-    print(f"Part 1: {part1(input)}")
-    print(f"Part 2: {part2(input)}")
+    # s = [int(x) for x in s.split()]
+
+    print(f"Part 1: {part1(s)}")
+    print(f"Part 2: {part2(s)}")
