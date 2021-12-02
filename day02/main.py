@@ -1,14 +1,15 @@
 def part1(s):
     hori_pos = 0
     depth = 0
-    for c in s:
-        cmd, num = c.split()
+    for line in s:
+        cmd, num = line.split()
+        num = int(num)
         if cmd == "forward":
-             hori_pos += int(num)
+             hori_pos += num
         elif cmd == "up":
-            depth -= int(num)
+            depth -= num
         elif cmd == "down":
-            depth += int(num)
+            depth += num
     return hori_pos * depth
 
 
@@ -16,15 +17,16 @@ def part2(s):
     hori_pos = 0
     depth = 0
     aim = 0
-    for c in s:
-        cmd, num = c.split()
+    for line in s:
+        cmd, num = line.split()
+        num = int(num)
         if cmd == "forward":
-            hori_pos += int(num)
-            depth += aim * int(num)
+            hori_pos += num
+            depth += aim * num
         elif cmd == "up":
-            aim -= int(num)
+            aim -= num
         elif cmd == "down":
-            aim += int(num)
+            aim += num
     return hori_pos * depth
 
 
