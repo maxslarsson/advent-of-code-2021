@@ -8,9 +8,9 @@ def part2(s):
 
 if __name__ == '__main__':
     with open('input.txt') as f:
-        s = f.read()
+        s = f.read().split("\n")
 
-    # s = [int(x) for x in s.split()]
+    # s = [int(x) for x in s]
 
     print(f"Part 1: {part1(s)}")
     print(f"Part 2: {part2(s)}")
