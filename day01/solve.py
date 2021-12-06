@@ -24,20 +24,7 @@ def part2(s):
 
 if __name__ == '__main__':
     with open('input.txt') as f:
-        s = f.read()
-
-    # s = """199
-    # 200
-    # 208
-    # 210
-    # 200
-    # 207
-    # 240
-    # 269
-    # 260
-    # 263"""
-
-    s = [int(x) for x in s.split()]
+        s = [int(x) for x in f.read().split()]
 
     print(f"Part 1: {part1(s)}")
     print(f"Part 2: {part2(s)}")
