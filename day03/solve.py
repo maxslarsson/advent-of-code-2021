@@ -40,23 +40,5 @@ if __name__ == '__main__':
     with open('input.txt') as f:
         s = f.read().split("\n")
 
-    # s = [int(x, 2) for x in s]
-
-    # s = """00100
-    # 11110
-    # 10110
-    # 10111
-    # 10101
-    # 01111
-    # 00111
-    # 11100
-    # 10000
-    # 11001
-    # 00010
-    # 01010"""
-    #
-    # s = s.split("\n")
-    # s = [x.strip() for x in s]
-
     print(f"Part 1: {part1(s)}")
     print(f"Part 2: {part2(s)}")
