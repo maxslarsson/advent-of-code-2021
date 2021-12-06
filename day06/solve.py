@@ -10,12 +10,9 @@ def part1(s):
                 intervals.append(8)
             else:
                 intervals[i] -= 1
-        print(intervals)
-
     return len(intervals)
 
 
-# Each input produces 1+(17-3)/7 items to the list
 def part2(s):
     intervals = {x: 0 for x in range(9)}
     for x in s:
@@ -29,7 +26,6 @@ def part2(s):
                 intervals[8] += v
             else:
                 intervals[k-1] += v
-
     return sum(intervals.values())
 
 
