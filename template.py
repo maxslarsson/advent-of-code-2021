@@ -7,7 +7,7 @@ def part2(s):
 
 
 if __name__ == '__main__':
-    with open('input.txt') as f:
+    with open('sample.txt') as f:
         s = f.read().split("\n")
 
     # s = [int(x) for x in s]
