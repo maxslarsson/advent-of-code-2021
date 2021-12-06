@@ -46,7 +46,7 @@ Consider only horizontal and vertical lines. At how many points do at least two 
 
 Your puzzle answer was `6311`.
 
-# Part Two
+## Part Two
 
 Unfortunately, considering only horizontal and vertical lines doesn't give you the full picture; you need to also consider diagonal lines.
 
