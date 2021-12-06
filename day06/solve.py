@@ -1,0 +1,41 @@
+from copy import deepcopy
+
+
+def part1(s):
+    intervals = s.copy()
+    for _ in range(80):
+        for i in range(len(intervals)):
+            if intervals[i] == 0:
+                intervals[i] = 6
+                intervals.append(8)
+            else:
+                intervals[i] -= 1
+        print(intervals)
+
+    return len(intervals)
+
+
+# Each input produces 1+(17-3)/7 items to the list
+def part2(s):
+    intervals = {x: 0 for x in range(9)}
+    for x in s:
+        intervals[x] += 1
+    for i in range(256):
+        clone = deepcopy(intervals)
+        for k, v in clone.items():
+            intervals[k] -= v
+            if k == 0:
+                intervals[6] += v
+                intervals[8] += v
+            else:
+                intervals[k-1] += v
+
+    return sum(intervals.values())
+
+
+if __name__ == '__main__':
+    with open('input.txt') as f:
+        s = [int(x) for x in f.read().split(',')]
+
+    print(f"Part 1: {part1(s)}")
+    print(f"Part 2: {part2(s)}")
