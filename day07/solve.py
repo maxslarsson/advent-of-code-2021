@@ -7,12 +7,12 @@ def part1(s):
 
 
 def fuel_cost_part2(target, horizontal_positions):
-    times = []
+    fuel_cost_per_crab = []
     for pos in horizontal_positions:
         n = abs(pos-target)
         s = n * (1 + n) // 2
-        times.append(s)
-    return sum(times)
+        fuel_cost_per_crab.append(s)
+    return sum(fuel_cost_per_crab)
 
 
 def part2(s):
