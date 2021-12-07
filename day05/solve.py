@@ -71,11 +71,13 @@ def find_num_points_with_more_than_two_lines_intersecting(equations):
     return at_least_two_lines_overlap
 
 
-if __name__ == '__main__':
+def main():
     with open('input.txt') as f:
         s = f.read().split("\n")
 
-    # s = [int(x) for x in s]
-
     print(f"Part 1: {part1(s)}")
     print(f"Part 2: {part2(s)}")
+
+
+if __name__ == '__main__':
+    main()

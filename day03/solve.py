@@ -36,9 +36,13 @@ def part2(s):
     return int(oxy[0], 2) * int(co2[0], 2)
 
 
-if __name__ == '__main__':
+def main():
     with open('input.txt') as f:
         s = f.read().split("\n")
 
     print(f"Part 1: {part1(s)}")
     print(f"Part 2: {part2(s)}")
+
+
+if __name__ == '__main__':
+    main()

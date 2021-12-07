@@ -30,9 +30,13 @@ def part2(s):
     return hori_pos * depth
 
 
-if __name__ == '__main__':
+def main():
     with open('input.txt') as f:
         s = f.read().split("\n")
 
     print(f"Part 1: {part1(s)}")
     print(f"Part 2: {part2(s)}")
+
+
+if __name__ == '__main__':
+    main()
