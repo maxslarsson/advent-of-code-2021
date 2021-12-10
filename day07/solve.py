@@ -1,3 +1,7 @@
+INFILE = 'input.txt'
+# INFILE = 'sample.txt'
+
+
 def fuel_cost_part1(target, horizontal_positions):
     return sum(abs(pos-target) for pos in horizontal_positions)
 
@@ -20,7 +24,7 @@ def part2(s):
 
 
 def main():
-    with open('input.txt') as f:
+    with open(INFILE) as f:
         s = [int(x) for x in f.read().split(",")]
 
     print(f"Part 1: {part1(s)}")
