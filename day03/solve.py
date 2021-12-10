@@ -1,3 +1,7 @@
+INFILE = 'input.txt'
+# INFILE = 'sample.txt'
+
+
 def part1(s):
     most_common = ""
     least_common = ""
@@ -37,7 +41,7 @@ def part2(s):
 
 
 def main():
-    with open('input.txt') as f:
+    with open(INFILE) as f:
         s = f.read().split("\n")
 
     print(f"Part 1: {part1(s)}")
