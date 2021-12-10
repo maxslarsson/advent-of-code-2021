@@ -1,3 +1,7 @@
+INFILE = 'input.txt'
+# INFILE = 'sample.txt'
+
+
 class Equation:
     def __init__(self, point1, point2, slope_numerator, slope_denominator):
         self.point = point1
@@ -72,7 +76,7 @@ def find_num_points_with_more_than_two_lines_intersecting(equations):
 
 
 def main():
-    with open('input.txt') as f:
+    with open(INFILE) as f:
         s = f.read().split("\n")
 
     print(f"Part 1: {part1(s)}")
