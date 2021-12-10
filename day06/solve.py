@@ -1,4 +1,3 @@
-from copy import deepcopy
 INFILE = 'input.txt'
 # INFILE = 'sample.txt'
 
@@ -20,7 +19,7 @@ def part2(s):
     for x in s:
         intervals[x] += 1
     for i in range(256):
-        clone = deepcopy(intervals)
+        clone = intervals.copy()
         for k, v in clone.items():
             intervals[k] -= v
             if k == 0:
