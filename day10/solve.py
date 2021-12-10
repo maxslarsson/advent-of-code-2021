@@ -1,4 +1,4 @@
-opposite = {
+open_to_closing = {
     '{': '}',
     '[': ']',
     '(': ')',
@@ -12,13 +12,14 @@ def part1(s):
     for line in s:
         stack = []
         for c in line:
-            if c in opposite.keys():
+            if c in open_to_closing.keys():
                 stack.append(c)
-            elif c == opposite[stack[-1]]:
+            elif c == open_to_closing[stack[-1]]:
                 stack.pop()
             else:
                 first_invalid_chars.append(c)
                 break
+
     lookup_table = {
         ')': 3,
         ']': 57,
@@ -34,14 +35,14 @@ def part2(s):
     for line in s:
         stack = []
         for c in line:
-            if c in opposite.keys():
+            if c in open_to_closing.keys():
                 stack.append(c)
-            elif c == opposite[stack[-1]]:
+            elif c == open_to_closing[stack[-1]]:
                 stack.pop()
             else:
                 break
         else:
-            missing_closing_characters.append(reversed([opposite[c] for c in stack]))
+            missing_closing_characters.append(reversed([open_to_closing[c] for c in stack]))
 
     lookup_table = {
         ')': 1,
