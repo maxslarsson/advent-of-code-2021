@@ -1,3 +1,7 @@
+INFILE = 'input.txt'
+# INFILE = 'sample.txt'
+
+
 def part1(s):
     low_points = []
 
@@ -61,7 +65,7 @@ def recursive(grid, pos, basins_to_members, members=None):
 
 
 def main():
-    with open('input.txt') as f:
+    with open(INFILE) as f:
         s = [[int(num) for num in list(line)] for line in f.read().split("\n")]
 
     print(f"Part 1: {part1(s)}")
