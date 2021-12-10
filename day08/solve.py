@@ -1,5 +1,9 @@
 from itertools import permutations
 
+INFILE = 'input.txt'
+# INFILE = 'sample.txt'
+
+
 def part1(s):
     uniq_length_to_num = {
         2: 1,
@@ -61,7 +65,7 @@ def part2(s):
 
 
 def main():
-    with open('input.txt') as f:
+    with open(INFILE) as f:
         s = f.read().split("\n")
 
     print(f"Part 1: {part1(s)}")
