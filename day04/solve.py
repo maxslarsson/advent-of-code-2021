@@ -1,3 +1,7 @@
+INFILE = 'input.txt'
+# INFILE = 'sample.txt'
+
+
 class Board:
     def __init__(self, b):
         self.board = [[(num, False) for num in row] for row in b]
@@ -54,7 +58,7 @@ def create_boards(s):
 
 
 def main():
-    with open('input.txt') as f:
+    with open(INFILE) as f:
         s = f.read().split("\n")
 
     nums = [int(num) for num in s[0].split(',')]
