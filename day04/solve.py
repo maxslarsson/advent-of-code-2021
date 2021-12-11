@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 INFILE = 'input.txt'
 # INFILE = 'sample.txt'
 
@@ -64,8 +66,8 @@ def main():
     nums = [int(num) for num in s[0].split(',')]
     boards = create_boards(s[2:])
 
-    print(f"Part 1: {part1(nums, boards)}")
-    print(f"Part 2: {part2(nums, boards)}")
+    print(f"Part 1: {part1(deepcopy(nums), deepcopy(boards))}")
+    print(f"Part 2: {part2(deepcopy(nums), deepcopy(boards))}")
 
 
 if __name__ == '__main__':
