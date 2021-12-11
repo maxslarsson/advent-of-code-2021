@@ -1,7 +1,9 @@
+from copy import deepcopy
 from itertools import permutations
 
 INFILE = 'input.txt'
-# INFILE = 'sample.txt'
+# INFILE = 'sample1.txt'
+# INFILE = 'sample2.txt'
 
 
 def part1(s):
@@ -68,8 +70,8 @@ def main():
     with open(INFILE) as f:
         s = f.read().split("\n")
 
-    print(f"Part 1: {part1(s)}")
-    print(f"Part 2: {part2(s)}")
+    print(f"Part 1: {part1(deepcopy(s))}")
+    print(f"Part 2: {part2(deepcopy(s))}")
 
 
 if __name__ == '__main__':
