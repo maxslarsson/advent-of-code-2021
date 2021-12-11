@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 INFILE = 'input.txt'
 # INFILE = 'sample.txt'
 
@@ -34,8 +36,8 @@ def main():
     with open(INFILE) as f:
         s = [int(x) for x in f.read().split(',')]
 
-    print(f"Part 1: {part1(s)}")
-    print(f"Part 2: {part2(s)}")
+    print(f"Part 1: {part1(deepcopy(s))}")
+    print(f"Part 2: {part2(deepcopy(s))}")
 
 
 if __name__ == '__main__':
