@@ -49,7 +49,6 @@ def part2(s):
                     s[row][col] = 0
 
 
-# NOTE: An octopus can only flash at most once per step.
 def flash(row, col, grid, flashed):
     if grid[row][col] > 9 and not flashed[row][col]:
         flashed[row][col] = True
