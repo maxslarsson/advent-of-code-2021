@@ -101,6 +101,16 @@ def dijkstra(grid):
     return path, risk
 
 
+def inc_row_by(row, n):
+    new_row = []
+    for i in row:
+        num = i
+        for _ in range(n):
+            num = NUMS[num]
+        new_row.append(num)
+    return new_row
+
+
 def main():
     with open(INFILE) as f:
         grid = [[int(x) for x in line] for line in f.read().split("\n")]
@@ -108,6 +118,22 @@ def main():
     best_path, lowest_risk = dijkstra(grid)
     print(f"Part 1: {lowest_risk}")
 
+    rows = []
+
+    for row in grid:
+        joined = []
+        for i in range(5):
+            joined += inc_row_by(row, i)
+        rows.append(joined)
+
+    grid_part_2 = []
+
+    for i in range(5):
+        for row in rows:
+            grid_part_2.append(inc_row_by(row, i))
+
+    best_path, lowest_risk = dijkstra(grid_part_2)
+    print(f"Part 2: {lowest_risk}")
 
 
 if __name__ == '__main__':
