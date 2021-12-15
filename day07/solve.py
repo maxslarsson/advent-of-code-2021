@@ -1,7 +1,7 @@
 from copy import deepcopy
 
-INFILE = 'input.txt'
 # INFILE = 'sample.txt'
+INFILE = 'input.txt'
 
 
 def fuel_cost_part1(target, horizontal_positions):

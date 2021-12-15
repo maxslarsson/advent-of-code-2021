@@ -1,8 +1,8 @@
 from copy import deepcopy
 
-INFILE = 'input.txt'
 # INFILE = 'sample1.txt'
 # INFILE = 'sample2.txt'
+INFILE = 'input.txt'
 
 
 def part1(s):

@@ -1,9 +1,9 @@
 from copy import deepcopy
 from itertools import permutations
 
-INFILE = 'input.txt'
 # INFILE = 'sample1.txt'
 # INFILE = 'sample2.txt'
+INFILE = 'input.txt'
 
 
 def part1(s):
