@@ -6,16 +6,16 @@ from itertools import chain
 INFILE = 'input.txt'
 
 
-def part1(temp):
+def part1(template, rules):
     for _ in range(10):
-        new = deepcopy(temp)
-        for i in range(len(temp) - 1):
-            z, o = temp[i], temp[i + 1]
+        new = deepcopy(template)
+        for i in range(len(template) - 1):
+            z, o = template[i], template[i + 1]
             new.insert(2*i+1, rules[z+o])
-        temp = new
+        template = new
 
     count = {}
-    for elem in temp:
+    for elem in template:
         if elem not in count:
             count[elem] = 1
         else:
@@ -24,13 +24,13 @@ def part1(temp):
     return count[-1][1] - count[0][1]
 
 
-def part2(temp):
+def part2(template, rules):
     bucket = ()
-    left_edge = temp[0]
-    right_edge = temp[-1]
-    for i in range(len(temp) - 1):
-        z, o = temp[i], temp[i + 1]
-        bucket = add_tuples(bucket, recursive(z+o, 40))
+    left_edge = template[0]
+    right_edge = template[-1]
+    for i in range(len(template) - 1):
+        z, o = template[i], template[i + 1]
+        bucket = add_tuples(bucket, recursive(z+o, 40, rules))
 
     new_bucket = {}
     for k, v in bucket:
@@ -43,7 +43,7 @@ def part2(temp):
 
 
 @lru_cache(maxsize=None)
-def recursive(pair, depth):
+def recursive(pair, depth, rules):
     if depth == 0:
         bucket = {}
         for letter in pair:
@@ -67,11 +67,15 @@ def add_tuples(t1, t2):
     return new_dict.items()
 
 
-if __name__ == '__main__':
+def main():
     with open(INFILE) as f:
         s = f.read().split("\n")
         template = list(s[0])
         rules = {line.split(" -> ")[0]: line.split(" -> ")[1] for line in s[2:]}
 
-    print(f"Part 1: {part1(deepcopy(template))}")
-    print(f"Part 2: {part2(deepcopy(template))}")
+    print(f"Part 1: {part1(deepcopy(template), rules)}")
+    print(f"Part 2: {part2(deepcopy(template), rules)}")
+
+
+if __name__ == '__main__':
+    main()
