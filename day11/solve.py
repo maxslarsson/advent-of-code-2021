@@ -4,6 +4,9 @@ from copy import deepcopy
 # INFILE = 'sample2.txt'
 INFILE = 'input.txt'
 
+DROW = [0, 0, 1, 1, 1, -1, -1, -1]
+DCOL = [1, -1, 1, -1, 0, 1, -1, 0]
+
 
 def part1(s):
     total_flashes = 0
@@ -52,9 +55,7 @@ def part2(s):
 def flash(row, col, grid, flashed):
     if grid[row][col] > 9 and not flashed[row][col]:
         flashed[row][col] = True
-        drow = [0, 0, 1, 1, 1, -1, -1, -1]
-        dcol = [1, -1, 1, -1, 0, 1, -1, 0]
-        for row_d, col_d in zip(drow, dcol):
+        for row_d, col_d in zip(DROW, DCOL):
             if 0 <= row + row_d < len(grid) and 0 <= col + col_d < len(grid[0]):
                 grid[row + row_d][col + col_d] += 1
                 flash(row + row_d, col + col_d, grid, flashed)
