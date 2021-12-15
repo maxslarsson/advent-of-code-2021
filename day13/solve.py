@@ -31,6 +31,21 @@ def fold(grid, instructions):
     return grid
 
 
+def print_grid(grid):
+    x_min = min([point[0] for point in grid])
+    y_min = min([point[1] for point in grid])
+    x_max = max([point[0] for point in grid])
+    y_max = max([point[1] for point in grid])
+
+    for y in range(y_min, y_max+1):
+        for x in range(x_min, x_max+1):
+            if (x, y) in grid:
+                print("█", end="")
+            else:
+                print(" ", end="")
+        print()
+
+
 def main():
     grid = set()
     with open(INFILE) as f:
@@ -45,6 +60,9 @@ def main():
 
     part1_grid = fold(deepcopy(grid), [instructions[0]])
     print(f"Part 1: {len(part1_grid)}")
+    part2_grid = fold(deepcopy(grid), instructions)
+    print(f"Part 2:")
+    print_grid(part2_grid)
 
 
 if __name__ == '__main__':
